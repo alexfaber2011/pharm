@@ -10,6 +10,7 @@ var census = require('./modules/census');
 var http = require('http');
 var path = require('path');
 var economic = require('./modules/economic');
+var google_places = require('./modules/google_places');
 
 var app = express();
 
@@ -34,6 +35,7 @@ app.get('/', routes.index);
 app.get('/yellow/:what/:where', yellow_pages.getYellow);
 app.get('/zillow', economic.get_zillow);
 app.get('/census/:type/:keypat/:sumlevid', census.getData);
+app.get('/google_places/:state/:city/:business_type/:query', google_places.getCityData);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

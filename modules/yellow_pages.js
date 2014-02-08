@@ -4,12 +4,11 @@
 
 // FindBusiness - 
 //	/FindBusiness/?pg={page}&what={what}&where={where}&pgLen={page length}&lang={en|fr}&fmt={json|xml}&sflag={search flags}&apikey={xxxxxxxxxxxxxxxxxxxxxxxx}&UID={unique identifier}
+// 
 
 // GetBusinessDetails - 
 // /GetBusinessDetails/?prov={province name}&city={city name}&bus-name={Business Name}&listingId={listing id}&lang={en|fr}&fmt={json|xml}&apikey={xxxxxxxxxxxxxxxxxxxxxxxx}&UID={unique_identifier}
-
-// Example CURL - 
-// curl http://api.sandbox.yellowapi.com/FindBusiness/?what=barbers&where=boston&pgLen=1000&fmt=JSON&UID=127.0.0.1&apikey=wxg2txv25janp6s9bufwfjyb
+// http://api.sandbox.yellowapi.com/FindBusiness/?what=barber&where=boston&pgLen=1000&fmt=json&apikey=wxg2txv25janp6s9bufwfjyb&UID=127.0.0.1
 
 // *****HOW TO USE THIS MODULE******
 // ROUTE: /yellow_pages/location/:location/type/:type
