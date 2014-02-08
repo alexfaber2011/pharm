@@ -37,7 +37,7 @@ app.get('/', routes.index);
 app.get('/yellow/:what/:where', yellow_pages.getYellow);
 app.get('/zillow', function(res, req){
 	economic.get_zillow("WI", "Wausau", function(result){
-		res.send(result);
+		console.log(result);
 	});
 });
 app.get('/census/:type/:keypat/:sumlevid', census.getData);
