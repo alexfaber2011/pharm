@@ -5,7 +5,7 @@
 
 var express = require('express');
 var routes = require('./routes');
-var yellow_pages = require('./modules/yellow_pages')
+// var yellow_pages = require('./modules/yellow_pages');
 var census = require('./modules/census');
 var http = require('http');
 var path = require('path');
@@ -32,7 +32,10 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
-app.get('/yellow/:what/:where', yellow_pages.getYellow);
+google_places.getCityData("boston", "ma", "pet_store", "dog", function(result){
+	console.log(result);
+})
+
 app.get('/zillow', economic.get_zillow);
 app.get('/census/:type/:keypat/:sumlevid', census.getData);
 app.get('/google_places/:state/:city/:business_type/:query', google_places.getCityData);
