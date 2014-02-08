@@ -19,9 +19,9 @@
 var request = require("request");
 
 
-exports.getYellow = function(req, res) {
+exports.getYellow = function(what, where) {
 	request({
-		uri: "http://api.sandbox.yellowapi.com/FindBusiness/?what=" + req.params.what + "&where=" + req.params.where + "&pgLen=1000&fmt=json&apikey=wxg2txv25janp6s9bufwfjyb&UID=127.0.0.1", 
+		uri: "http://api.sandbox.yellowapi.com/FindBusiness/?what=" + what + "&where=" + where+ "&pgLen=1000&fmt=json&apikey=wxg2txv25janp6s9bufwfjyb&UID=127.0.0.1", 
 		method: 'GET',
 		json: true
 	},function(error, response, body) {
