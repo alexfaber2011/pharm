@@ -7,29 +7,54 @@ var google = require('./google_places');
 
 
 
-exports.doPrediction = function(req, res) {
+exports.doPrediction = function(query, location, business_type, cb) 
+{
 	console.log("in papi");
 
-	var query = req.params.query;
-	var location = req.params.location;
-	var business_type = req.params.business_type;
-
-	// app.get('/yellow/:what/:where', yellow_pages.getYellow);
-	// app.get('/zillow', economic.get_zillow);
-	// app.get('/census/:type/:keypat/:sumlevid', census.getData);
-
 	// Find top 10 cities in state
-	census.getData("pop", location, "4,6", function(result){
-		// res.send(result);
-		var cities = JSON.parse(result);
-		// console.log(cities);
+	census.getData("pop", location, "4,6", function(result)
+	{
+		var cities = result;
+
+		city = cities[0];
 		
-		city = cities["response"][0];
-		// Find Google Listings
-		google.getCityData(city["placename"], city["StatePostal"], business_type, query, function(result){
+		//Easiest way to get all business listings
+		// Begin shittiest code ever
+		google.getCityData(city["placename"], city["StatePostal"], business_type, query, "", function(result)
+		{
 			var businesses = JSON.parse(result);
-			
-		})//google
+			var number_of_businesses = 0;
+			if (businesses["next_page_token"])
+			{
+				number_of_businesses = 20;
+				google.getCityData(city["placename"], city["StatePostal"], business_type, query, businesses["next_page_token"], function(result)
+				{
+					businesses = JSON.parse(result);
+					if (businesses["next_page_token"])
+					{
+						number_of_businesses = 40;
+						google.getCityData(city["placename"], city["StatePostal"], business_type, query, businesses["next_page_token"], function(result)
+						{
+							businesses = JSON.parse(result);
+							number_of_businesses = 40 + businesses["results"].length;
+							console.log(number_of_businesses);
+						});
+					}
+					else
+					{
+						number_of_businesses = 20 + businesses["results"].length;
+					}
+				});
+			}
+			else
+			{
+				number_of_busineses = businesses["results"].length;
+			}
+		});//google
+		// End shittiest code ever
+		
+		// Zillow
+		
+				
 	});//census.getData
-	
-}
+}//exports

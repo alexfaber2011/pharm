@@ -1,7 +1,6 @@
 var request = require('request'),
 	util = require('util');
 var cities = require('./find20');
-
 var USA_TODAY_KEY = "s2dakjn2ap9zbjgng5jwpacr";
 
 exports.getData= function(typeArg, keypatArg, sumlevidArg, cb) {
@@ -25,12 +24,11 @@ exports.getData= function(typeArg, keypatArg, sumlevidArg, cb) {
 // };
 
 	function startFind(error, response, body){
+		console.log("in startFind");
 		if (!error && response.statusCode == 200) {
-			//console.log('success'+body);
 			sorted = cities.getTop20(JSON.parse(body)['response']);
 			cb(sorted); //success
 		}else {
-			// console.log('error'+error); //failed
 			cb(error);
 		}
 	}
