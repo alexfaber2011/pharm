@@ -5,7 +5,7 @@ block content
 		div.jumbotron
 			h1= title
 			p Welcome to #{title}
-			form(action="/data" method="get")
+			form(action="/data" method="post")
 					input(type="text" name="query" value="Business")
 					input(type="text" name="loc" value="State")
 					select(name="business_type")
