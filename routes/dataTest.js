@@ -1,10 +1,10 @@
-var papi = require('../modules/papi');
+var papi = require('./modules/papi');
 
 exports.index = function(req, res){
 	
-	var query = req.body.query;
-	var location = req.body.loc;
-	var business_type = req.body.business_type;
+	var query = req.params.query;
+	var location = req.params.loc;
+	var business_type = req.params.business_type;
 	
 	papi.doPrediction(query, location, business_type, function(result){
 		json = JSON.parse(result);
@@ -14,5 +14,4 @@ exports.index = function(req, res){
 
 
 	res.render('data', { title: 'BisNiche', topCities: topCities);
-	//topCities = ["Milwaukee" => "10", "Madison" => "9", "Green Bay" => "8", "Wausau" => "7", "Kenosha" => "6"];
 };

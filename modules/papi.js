@@ -13,12 +13,16 @@ var request = require('request');
 exports.doPrediction = function(req, res)
 {
 	console.log("in papi");
+<<<<<<< HEAD
 	
 	var query = req.params.query;
 	var location = req.params.location;
 	var business_type  = req.params.business_type;
 	var city_array = new Array();
 	
+=======
+	var city_array = new Array();
+>>>>>>> 20e7bc94309d260d8489a0dd060555c23914188d
 	var done = false;
 
 	// Find top 10 cities in state
@@ -116,7 +120,7 @@ exports.doPrediction = function(req, res)
 	var timer = setInterval(function() {
 		if (done == true) {
 			console.log(city_array);
-			res.send(city_array);
+			cb(city_array);
 			clearInterval(timer);
 		}
 	}, 100);

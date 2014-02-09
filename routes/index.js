@@ -108,3 +108,5 @@ exports.index = function(req, res){
 exports.login = function(req, res){
 	res.render('login');
 }
+
+exports.data = require('./data').index;

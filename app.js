@@ -31,7 +31,8 @@ if ('development' == app.get('env')){
 
 // routes
 app.get('/', routes.index);
-app.get('/data/:query/:loc/:business_type', routes.data);
+///data?query=duck+farm&loc=CA&business_type=95
+app.post('/data', routes.data);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
