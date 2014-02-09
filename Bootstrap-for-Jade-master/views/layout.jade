@@ -1,4 +1,4 @@
-doctype html
+doctype 5
 html
   include inc/header
 
@@ -14,7 +14,7 @@ html
             a.navbar-brand(href='#') #{brand}
           .navbar-collapse.collapse
             ul.nav.navbar-nav
-              - var obj = { 'home':'Home'}
+              - var obj = { 'home':'Home', 'about':'About' }
                 - each val, key in obj
                   - if (id == key)
                     li.active

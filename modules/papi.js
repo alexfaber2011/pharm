@@ -83,8 +83,7 @@ exports.doPrediction = function(req, res)
 					}
 				});//google
 				// End shittiest code ever	
-		
-				
+						
 				// Twitter
 				function doTwitterStuff() {
 					twitter.search(query, lat, lon, "40mi", function(result){
@@ -121,7 +120,4 @@ exports.doPrediction = function(req, res)
 			clearInterval(timer);
 		}
 	}, 100);
-	
-	
-	
 }//exports

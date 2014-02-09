@@ -9,4 +9,9 @@ exports.index = function(req, res){
 	papi.doPrediction(query, location, business_type, function(result){
 		json = JSON.parse(result);
 	});
+
+	topCities = ["Milwaukee" => "10", "Madison" => "9", "Green Bay" => "8", "Wausau" => "7", "Kenosha" => "6"];
+
+
+	res.render('data', { title: 'BisNiche', topCities: topCities);
 };

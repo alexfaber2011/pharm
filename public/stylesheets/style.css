@@ -78,7 +78,7 @@ body, html {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/Boilermake\/pharm\/public\/stylesheets\/style\.scss}line{font-family:\0000378}}
 .wrapper {
   position: relative;
-  width: 1024px;
+  width: 1280px;
   margin-left: auto;
   margin-right: auto; }
 
@@ -102,30 +102,38 @@ body, html {
     text-align: center;
     margin-bottom: 10px;
     font-size: 3em;
-    text-shadow: 0px 2px 1px grey; }
+    text-shadow: 0px 1px 1px grey; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/Boilermake\/pharm\/public\/stylesheets\/style\.scss}line{font-family:\00003107}}
   #picture_background form {
     position: relative;
-    width: 800px;
+    width: 1024px;
     margin-right: auto;
     margin-left: auto;
-    height: 200px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/Boilermake\/pharm\/public\/stylesheets\/style\.scss}line{font-family:\00003114}}
+    min-height: 100px;
+    margin-top: 50px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/Boilermake\/pharm\/public\/stylesheets\/style\.scss}line{font-family:\00003115}}
     #picture_background form input {
       position: relative;
       float: left;
       width: 350px;
       height: 20px;
       padding: 5px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/Boilermake\/pharm\/public\/stylesheets\/style\.scss}line{font-family:\00003122}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/Boilermake\/pharm\/public\/stylesheets\/style\.scss}line{font-family:\00003123}}
     #picture_background form input#submit {
       position: relative;
       float: left;
       width: 50px;
       height: 35px;
       padding: 5px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/Boilermake\/pharm\/public\/stylesheets\/style\.scss}line{font-family:\00003131}}
+    #picture_background form select {
+      position: relative;
+      float: left;
+      width: 200px;
+      height: 35px;
+      padding: 5px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/Boilermake\/pharm\/public\/stylesheets\/style\.scss}line{font-family:\00003132}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/Boilermake\/pharm\/public\/stylesheets\/style\.scss}line{font-family:\00003141}}
 #footer {
   position: relative;
   width: 100%;
