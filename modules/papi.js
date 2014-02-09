@@ -40,7 +40,7 @@ exports.doPrediction = function(query, location, business_type, cb)
 				if(error){console.log(res.send(error))}
 				var lat = JSON.parse(body)[0]["primary_latitude"];
 				var lon = JSON.parse(body)[0]["primary_longitude"];
-				var number_of_businesses = 0;
+				var number_of_businesses;
 				city_json.city = city["Placename"];
 				city_json.state = location;
 					
@@ -107,11 +107,30 @@ exports.doPrediction = function(query, location, business_type, cb)
 		});//cities.forEach
 	});//census.getData
 		
+	// { city: 'San Jose',
+	//     state: 'CA',
+	//     tweets: 100,
+	//     zillow_data:
+	//      { City: 'San Jose',
+	//        State: 'California',
+	//        MeanValue: 654300,
+	//        MedianHouseholdIncome: 70243,
+	//        MedianSquareFoot: 401,
+	//        latitude: 37.297016,
+	//        longitude: -121.817409 },
+	//     listings: 0 },	
+		
 	var timer = setInterval(function() {
 		if (done == true) {
-			console.log(city_array);
+			city_array.forEach(function(parsed_city){
+				
+			});
 			cb(city_array);
 			clearInterval(timer);
 		}
 	}, 100);
 }//exports
+
+
+
+
