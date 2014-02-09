@@ -1,15 +1,14 @@
 extends layout
 
-
 block content
-	div(id="picture_background")
-		div(class="wrapper")
-			div(class="padding")
-				h1	BisNiche
-				form(action="/" method="get")
-					input(type="text" value="City")
-					input(type="text" value="Business")
+	div.container
+		div.jumbotron
+			h1= title
+			p Welcome to #{title}
+			form(action="/data" method="get")
+					input(type="text" name="query" value="Business")
+					input(type="text" name="loc" value="State")
+					select(name="business_type")
+						each googleOption, i in googleOptions
+							option(value=i) #{googleOption}
 					input(id="submit" type="submit" value="Go")
-	div(id="footer")
-		div(class="wrapper")
-			div(class="padding")

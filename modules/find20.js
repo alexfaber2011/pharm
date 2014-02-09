@@ -1,5 +1,6 @@
 
 exports.getTop20 = function(json){
+	console.log("in Top20");
 	var jsonArray = new Array();
 	var topIndexes = new Array();
 	var highest;
@@ -22,5 +23,6 @@ exports.getTop20 = function(json){
 		jsonArray[b] = json[topIndexes[b]];
 	}
 
-	return(jsonArray)
+	// console.log(jsonArray);
+	return(jsonArray);
 }
