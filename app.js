@@ -31,13 +31,7 @@ if ('development' == app.get('env')){
 
 // routes
 app.get('/', routes.index);
-app.get('/papi/:query/:loc/:business_type', routes.data);
-
-twitter.search("Chinese restaurant", "43.041333", "-89.514068", "100mi", function(result){
-	tweets = JSON.parse(result);
-	//console.log(tweets);
-	console.log(Object.keys(tweets["statuses"]).length);
-}); // defult 100mi?
+app.get('/data/:query/:loc/:business_type', routes.data);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

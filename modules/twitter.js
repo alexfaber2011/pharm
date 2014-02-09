@@ -13,7 +13,7 @@ exports.search = function(query, lat, lng, distance, cb){
     null,
     "HMAC-SHA1");
 
-    callURL = util.format('https://api.twitter.com/1.1/search/tweets.json?q=%s%20%20&geocode=%s%2C%s%2C%s', query, lat, lng, distance);
+    callURL = util.format('https://api.twitter.com/1.1/search/tweets.json?q=%s%20%20&geocode=%s%2C%s%2C%s&count=100', query, lat, lng, distance);
 
     oa.get(callURL, access_token, access_token_secret, function (error, data) {
         var result;

@@ -7,21 +7,11 @@ exports.getData= function(typeArg, keypatArg, sumlevidArg, cb) {
 
 	console.log("in getData");
 
-	var requestBaseURL = "http://api.usatoday.com/open/census/";	
-	var type = typeArg+"?";
-	var keypat = "keypat="+keypatArg+"&";
-	var sumlevid = "sumlevid="+sumlevidArg+"&";
-	var api = "api_key="+USA_TODAY_KEY;
-
-// function callback(error, response, body){
-// 	if (!error && response.statusCode == 200) {
-// 		console.log('success'+body);
-// 		cb(body); //success
-// 	}else {
-// 		console.log('error'+error); //failed
-// 		cb(error);
-// 	}
-// };
+	// var requestBaseURL = "http://api.usatoday.com/open/census/";	
+	// var type = typeArg+"?";
+	// var keypat = "keypat="+keypatArg+"&";
+	// var sumlevid = "sumlevid="+sumlevidArg+"&";
+	// var api = "api_key="+USA_TODAY_KEY;
 
 	function startFind(error, response, body){
 		console.log("in startFind");
