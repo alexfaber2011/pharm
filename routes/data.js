@@ -10,9 +10,9 @@ exports.index = function(req, res){
 		res.send(result);
 	});
 
-	topCities = ["Milwaukee" => "10", "Madison" => "9", "Green Bay" => "8", "Wausau" => "7", "Kenosha" => "6"];
+	topCities = ["Milwaukee", "Madison", "Green Bay", "Wausau", "Kenosha"];
 
 
-	res.render('data', { title: 'BisNiche', topCities: topCities);
+	res.render('data', { title: 'BisNiche', topCities: topCities});
 	//topCities = ["Milwaukee" => "10", "Madison" => "9", "Green Bay" => "8", "Wausau" => "7", "Kenosha" => "6"];
 };
