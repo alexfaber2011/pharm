@@ -7,8 +7,7 @@ var express = require('express');
 var routes = require('./routes');
 var http = require('http');
 var path = require('path');
-var http = require('http');
-var path = require('path');
+var papi = require('./modules/papi');
 
 var app = express();
 
@@ -29,7 +28,9 @@ if ('development' == app.get('env')){
   app.use(express.errorHandler());
 }
 
+// routes
 app.get('/', routes.index);
+app.get('/papi/:query/:location/:target', papi.doPrediction);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
