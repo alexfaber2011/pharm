@@ -55,6 +55,6 @@ exports.doPrediction = function(query, location, business_type, cb)
 		
 		// Zillow
 		
-				
 	});//census.getData
+	cb("temp");
 }//exports
