@@ -2,7 +2,10 @@ var census = require('./census');
 var yellow_pages = require('./yellow_pages');
 var economic = require('./economic');
 
+
+
 exports.doPrediction = function(req, res) {
+	console.log("in papi");
 
 	var query = req.params.query;
 	var location = req.params.location;
@@ -13,7 +16,7 @@ exports.doPrediction = function(req, res) {
 	// app.get('/census/:type/:keypat/:sumlevid', census.getData);
 
 	// Find top 10 cities in state
-	census.getData("pop", "CA", "4,6", function(result){
+	census.getData("pop", "AK", "4,6", function(result){
 		res.send(result);
 	});
 	
