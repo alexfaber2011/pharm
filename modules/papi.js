@@ -6,6 +6,7 @@ var economic = require('./economic');
 var google = require('./google_places');
 var twitter = require('./twitter')
 var request = require('request');
+var sort = require('./find5');
 
 
 
@@ -29,7 +30,8 @@ exports.doPrediction = function(query, location, business_type, cb)
 				state:{},
 				tweets:{}, 
 				zillow_data:{}, 
-				listings:{}
+				listings:{}, 
+				score:{}
 			}
 			
 			// console.log(city["Placename"]);
@@ -123,9 +125,14 @@ exports.doPrediction = function(query, location, business_type, cb)
 	var timer = setInterval(function() {
 		if (done == true) {
 			city_array.forEach(function(parsed_city){
-				
+				economy = parsed_city["zillow_data"]["MeanValue"] + parsed_city["zillow_data"]["MedianSquareFoot"] + parsed_city["zillow_data"]["MedianHouseholdIncome"];
+				score = (economy/100000) + (parsed_city["tweets"]/100);
+				console.log(score);
+				parsed_city.score = score;
+				// console.log(parsed_city);
 			});
-			cb(city_array);
+			console.log(sort.getTop5(city_array));
+			cb(sort.getTop5(city_array));
 			clearInterval(timer);
 		}
 	}, 100);
