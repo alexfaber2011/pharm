@@ -13,10 +13,8 @@ exports.doPrediction = function(req, res) {
 	// app.get('/census/:type/:keypat/:sumlevid', census.getData);
 
 	// Find top 10 cities in state
-	var popData = census.getData("pop", "CA", "4,6");
-
-	console.log(popData);
-
-	//res.send(result);
+	census.getData("pop", "CA", "4,6", function(result){
+		res.send(result);
+	});
 	
 }
