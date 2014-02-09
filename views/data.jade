@@ -3,4 +3,9 @@ extends layout
 block content
 	div.container
 		each topCity, i in topCities
-			h2(value=i) #{topCity}
+			h2(style="text-align: center")(value=i) #{topCity["city"]}, #{topCity["score"]} 
+		each topCity, j in topCities
+			div
+				h2	#{topCity["city"]},#{topCity["state"]}
+				ul
+					li	

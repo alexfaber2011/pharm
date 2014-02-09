@@ -7,6 +7,7 @@ exports.get_zillow = function(state, city, cb){
 		if (!error) {
 	        parseString(body, function (err, result) {
 		  		jsonObject = JSON.parse(JSON.stringify(result));
+		  		console.log(jsonObject);
 		  		
 		  		meanValue = parseInt(jsonObject["Demographics:demographics"]["response"][0]["pages"][0]["page"][0]["tables"][0]["table"][0]["data"][0]["attribute"][0]["values"][0]["city"][0]["value"][0]["_"]);
 		  		percentDecreasing = parseFloat(jsonObject["Demographics:demographics"]["response"][0]["pages"][0]["page"][0]["tables"][0]["table"][0]["data"][0]["attribute"][6]["values"][0]["city"][0]["value"][0]["_"]);
@@ -24,7 +25,7 @@ exports.get_zillow = function(state, city, cb){
 	};
 	// console.log("hello im in get zillow");
 	// console.log('http://www.zillow.com/webservice/GetDemographics.htm?zws-id=X1-ZWz1bac423yk23_7x5fi&state='+state+'&city='+city);
-	request('http://www.zillow.com/webservice/GetDemographics.htm?zws-id=X1-ZWz1bac423yk23_7x5fi&state='+state+'&city='+city, function (error, response, body) {
+	request('http://www.zillow.com/webservice/GetDemographics.htm?zws-id=X1-ZWz1dq70kp1157_8clop&state='+state+'&city='+city, function (error, response, body) {
 		//
 	}, callback)
 };
