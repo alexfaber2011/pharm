@@ -4,11 +4,6 @@ var request = require('request'),
 var USA_TODAY_KEY = "s2dakjn2ap9zbjgng5jwpacr";
 
 exports.getData= function(typeArg, keypatArg, sumlevidArg, cb) {
-var requestBaseURL = "http://api.usatoday.com/open/census/";	
-var type = typeArg+"?";
-var keypat = "keypat="+keypatArg+"&";
-var sumlevid = "sumlevid="+sumlevidArg+"&";
-var api = "api_key="+USA_TODAY_KEY;
 
 function callback(error, response, body){
 	if (!error && response.statusCode == 200) {

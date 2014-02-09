@@ -8,6 +8,8 @@
     "dependencies": {
         "express": "3.x",
         "jade": "*",
+        "passport": "*",
+        "passport-twitter": "*",
         "request": "*",
         "xml2js": "*"
     }
