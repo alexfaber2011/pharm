@@ -10,6 +10,7 @@
         "jade": "*",
         "passport": "*",
         "passport-twitter": "*",
+        "oauth": "*",
         "request": "*",
         "xml2js": "*"
     }
