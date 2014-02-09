@@ -8,6 +8,5 @@ exports.index = function(req, res){
 	
 	papi.doPrediction(query, location, business_type, function(result){
 		json = JSON.parse(result);
-		// pass on JSON
 	});
 };

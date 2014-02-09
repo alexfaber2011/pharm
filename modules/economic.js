@@ -18,7 +18,6 @@ exports.get_zillow = function(state, city, cb){
 		  		longitude = parseFloat(jsonObject["Demographics:demographics"]["response"][0]["region"][0]["longitude"][0]);
 		  		
 				sendBack = {"City": cityName, "State": stateName, "MeanValue": meanValue, "MedianHouseholdIncome": medianHouseholdIncome, "MedianSquareFoot": medianValueSqFoot, "latitude": latitude, "longitude": longitude};
-				console.log(sendBack);
 				cb(sendBack);
 			});
 	    }

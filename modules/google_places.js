@@ -13,7 +13,7 @@
 
 var request = require("request");
 
-exports.getCityData = function(city, state, business_type, query, cb) {
+exports.getCityData = function(city, state, business_type, query, pagetoken, cb) {
 	
 	function getGoogle(error, response, body, lat, lon, pagetoken) {
 		request({
