@@ -17,7 +17,7 @@ exports.getCityData = function(city, state, business_type, query, cb) {
 	
 	function getGoogle(error, response, body, lat, lon) {
 		request({
-			uri: "https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + query + "&location=" + lat + "," + lon + "&type=" + business_type + "&radius=20&sensor=false&key=AIzaSyATJzyl_9H5NGT1hOFkP5k7ZZSB9JSCiDw",
+			uri: "https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + query + "&location=" + lat + "," + lon + "&type=" + business_type + "&rankby=prominence&radius=20&sensor=false&key=AIzaSyATJzyl_9H5NGT1hOFkP5k7ZZSB9JSCiDw",
 			method: "GET", 
 			JSON: true
 		}, function(error, response, body) {
