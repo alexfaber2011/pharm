@@ -1,7 +1,6 @@
 var request = require('request');
 var parseString = require('xml2js').parseString;
 
-
 exports.get_zillow = function(state, city, cb){
 	function callback(error, response, body){
 

@@ -5,14 +5,9 @@
 
 var express = require('express');
 var routes = require('./routes');
-var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
-var yellow_pages = require('./modules/yellow_pages')
-var census = require('./modules/census');
-var http = require('http');
-var path = require('path');
-var economic = require('./modules/economic');
+var papi = require('./modules/papi');
 
 var app = express();
 
@@ -33,14 +28,9 @@ if ('development' == app.get('env')){
   app.use(express.errorHandler());
 }
 
+// routes
 app.get('/', routes.index);
-app.get('/yellow/:what/:where', yellow_pages.getYellow);
-app.get('/zillow', function(res, req){
-	economic.get_zillow("WI", "Wausau", function(result){
-		console.log(result);
-	});
-});
-app.get('/census/:type/:keypat/:sumlevid', census.getData);
+app.get('/papi', papi.doPrediction);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
