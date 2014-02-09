@@ -1,6 +1,15 @@
 extends layout
 
+
 block content
-  h1= title
-  p Welcome to #{title}
-	
+	div(id="picture_background")
+		div(class="wrapper")
+			div(class="padding")
+				h1	BisNiche
+				form(action="/" method="get")
+					input(type="text" value="City")
+					input(type="text" value="Business")
+					input(id="submit" type="submit" value="Go")
+	div(id="footer")
+		div(class="wrapper")
+			div(class="padding")

@@ -9,6 +9,6 @@
         "express": "3.x",
         "jade": "*",
         "request": "*",
-        "xml2js": "*"
+        "xml2js": "*",
     }
 }
