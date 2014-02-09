@@ -12,6 +12,6 @@
         "passport-twitter": "*",
         "oauth": "*",
         "request": "*",
-        "xml2js": "*",
+        "xml2js": "*"
     }
 }
