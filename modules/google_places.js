@@ -25,11 +25,7 @@ exports.getCityData = function(city, state, business_type, query, pagetoken, cb)
 	 	}); // request 
 	}; // getGoogle
 	
-	request({
-		uri: "http://api.sba.gov/geodata/all_links_for_city_of/" + city + "/" + state + ".json",
-		method: "GET",
-		json: true
-	}, function(error, response, body) {
+	request("http://api.sba.gov/geodata/all_links_for_city_of/" + city + "/" + state + ".json", function(error, response, body) {
 		lat = body[0]["primary_latitude"];
 		lon = body[0]["primary_longitude"];
 	}, getGoogle ); //request

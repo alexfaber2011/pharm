@@ -10,7 +10,7 @@ exports.index = function(req, res){
 		//res.send(result);
 		//res.json(result);
 		topCities = result
-		res.render('data', { title: 'JSON', topCities: topCities});
+		res.render('data', { title: 'Bisniche', topCities: topCities, query: query});
 	});
 
 

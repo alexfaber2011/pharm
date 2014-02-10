@@ -2,10 +2,15 @@ extends layout
 
 block content
 	div.container
+		h2 Results for #{query}
 		each topCity, i in topCities
 			h2(style="text-align: center")(value=i) #{topCity["city"]}, #{topCity["score"]} 
+	div(class="row" style="padding: 20px;")
 		each topCity, j in topCities
-			div
-				h2	#{topCity["city"]},#{topCity["state"]}
+			div(class="col-md-3" style="margin-left: auto; margin-right: auto;")
+				h2	#{topCity["city"]}, #{topCity["state"]}
 				ul
-					li	
+					li	Buzz: #{topCity["tweets"]}
+					li	Average Realestate Value: #{topCity["zillow_data"]["MeanValue"]}
+					li	Average Household Income: #{topCity["zillow_data"]["MedianHouseholdIncome"]}
+					li  Average Cost / Sq. Foot: #{topCity["zillow_data"]["MedianSquareFoot"]}
